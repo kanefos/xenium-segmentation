@@ -43,8 +43,7 @@ process runBaysor {
     // These values are estimates from the benchmarking that I did.
     memory { 10.GB + (1.GB * Math.round(TRANSCRIPTS.toInteger()  / 1000000 * 20) *  task.attempt ) }
     time { 12.hour * task.attempt }
-    errorStrategy 'retry'
-    maxRetries 3
+    errorStrategy 'ignore'
     input:
         tuple val(TRANSCRIPTS), path("transcripts.csv"), path("config.toml")
     output:
