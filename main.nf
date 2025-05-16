@@ -22,11 +22,6 @@ workflow {
         ch_baysor_segmentation = wf_baysor_segmentation.transcripts
         ch_baysor_config       = wf_baysor_segmentation.config
 
-        wf_xenium_ranger = XeniumRanger(
-            ch_baysor_segmentation,
-            ch_xenium_output
-        )
-
     } else if (params.segmentation_method == 'instanseg') {
         Instanseg(
             ch_xenium_output
