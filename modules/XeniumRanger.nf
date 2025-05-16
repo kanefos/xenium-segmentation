@@ -52,7 +52,7 @@ process runXeniumRanger {
          --transcript-assignment=transcripts.csv \
          --viz-polygons=polygons.geojson \
          --units=microns \
-         --localcores=16
+         --localcores=8
 
     """
 }
