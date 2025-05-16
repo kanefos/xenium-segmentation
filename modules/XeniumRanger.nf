@@ -4,8 +4,7 @@ process prepareInput {
     cpus 8
     memory { 20.GB * task.attempt }
     time { 4.hour * task.attempt }
-    errorStrategy 'retry'
-    maxRetries 3
+    errorStrategy 'ignore'
     input:
         path 'script.py'
         path 'input.csv'
@@ -28,8 +27,7 @@ process runXeniumRanger {
     cpus 16
     memory { 40.GB * task.attempt }
     time { 4.hour * task.attempt }
-    errorStrategy 'retry'
-    maxRetries 3
+    errorStrategy 'ignore'
 
     input:
         path "xenium_output"
